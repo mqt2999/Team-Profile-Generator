@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 
 function promptManager() {
 
-    return inquirer.prompt(
+   return  inquirer.prompt(
         [
             {
                 type: 'input',

@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 function head(){
-   return fs.writeFile('./dist/index.html',`<!DOCTYPE html>
+   return fs.writeFileSync('./dist/index.html',`<!DOCTYPE html>
    <html lang="en">
     <head>
         <meta charset="UTF-8">

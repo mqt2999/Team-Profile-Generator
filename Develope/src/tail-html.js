@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 function tail(){
-    fs.appendFile('./dist/index.html',`</div>
+    return fs.appendFileSync('./dist/index.html',`</div>
     </div>
     
 </body>
