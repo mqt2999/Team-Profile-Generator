@@ -1,5 +1,5 @@
 //importing the parent class Employee 
-const Employee = require('./Employee')
+const Employee = require('./Employee.js')
 //Manager class that extends Employee
 class Manager extends Employee {
     //constructor reads in class information

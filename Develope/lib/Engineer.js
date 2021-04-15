@@ -1,5 +1,5 @@
 //importing the parent class Employee
-const Employee = requier('./Employee')
+const Employee = require('./Employee.js')
 //Engineer class that extends parent class Employee
 class Engineer extends Employee {
     constructor(name, id, email, github) {

@@ -1,5 +1,5 @@
  // Importing the parent class 
-const Employee = require('./Employee')
+const Employee = require('./Employee.js')
 // Intern class that extends Employee
 class Intern extends Employee {
     constructor(name, id ,email, school){
