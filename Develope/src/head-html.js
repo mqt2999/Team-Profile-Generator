@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+const fs = require('fs')
+
+function head(){
+   return fs.writeFile('./dist/index.html',`<!DOCTYPE html>
    <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -14,8 +17,9 @@
         <div class="container">
             <div class="row"> 
     
-    </div>
-    </div>
-    
-</body>
-</html>
+    `,function(error){
+        console.log(error)
+    })
+}
+
+module.exports = head;
