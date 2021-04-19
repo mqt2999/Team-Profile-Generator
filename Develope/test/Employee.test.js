@@ -1,7 +1,7 @@
 const Employee = require('../lib/Employee.js')
 describe('Employee', () => {
 
-        it("be able to be created ", () => {
+        it("should be able to be created ", () => {
             const g = new Employee()
             expect(typeof (g)).toBe('object');
         })
