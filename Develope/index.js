@@ -10,19 +10,18 @@ const tail = require('./src/tail-html.js')
 const promptEngineer = require('./src/EngineerQ.js')
 const promptIntern = require('./src/InternQ.js')
 
-
 let companyRoster = []
 
 head()
 
 startManager()
 
-function startManager(){
-promptManager().then((response) => {
+function startManager() {
+    promptManager().then((response) => {
 
-    const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice)
-    companyRoster.push(manager)
-    fs.appendFileSync('./dist/index.html', `<div class="col-6">
+        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice)
+        companyRoster.push(manager)
+        fs.appendFileSync('./dist/index.html', `<div class="col-6">
                     <div class="card mx-auto mb-3" style="width: 18rem">
                     <h5 class="card-header">${manager.getName()}<br /><br />Manager</h5>
                     <ul class="list-group list-group-flush">
@@ -32,26 +31,25 @@ promptManager().then((response) => {
                     </ul>
                     </div>
                 </div>`, function (error) {
-        console.log(error)
+            console.log(error)
+        })
+        switch (response.endOcontinue) {
+            case 'none':
+                tail()
+                break;
+            case 'Engineer':
+                spitEngineer()
+                break;
+            case 'Intern':
+                spitIntern()
+                break;
+
+
+        }
+
+
     })
-    switch (response.endOcontinue) {
-        case 'none':
-            tail()
-            break;
-        case 'Engineer':
-            spitEngineer()
-            break;
-        case 'Intern':
-            spitIntern()
-            break;
-
-
-    }
-
-
-})
 }
-
 function spitEngineer() {
 
     promptEngineer().then((engResponse) => {
@@ -112,5 +110,3 @@ function spitIntern() {
         }
     })
 }
-
-
